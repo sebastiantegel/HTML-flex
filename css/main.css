@@ -1,0 +1,80 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 75px;
+  border: 1px solid green;
+}
+
+main {
+  border: 1px solid blue;
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+main > section {
+  border: 1px solid orange;
+  flex-grow: 1;
+}
+
+/* main > section:first-child {
+  flex-grow: 3;
+} */
+
+footer {
+  height: 100px;
+  border: 1px solid red;
+}
+
+/* .wrapper {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  /* align-items: center; */
+/* height: 100vh; */
+/* width: 80%; */
+/* margin: 0 auto;
+/* } */
+
+/* .wrapper > div {
+  width: 100px;
+  height: 100px;
+  border: 1px solid purple;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}  */
+
+@media screen and (min-width: 768px) {
+  main {
+    flex-direction: row;
+  }
+
+  main > section {
+    flex-grow: 3;
+  }
+
+  main > section:first-child,
+  main > section:last-child {
+    flex-grow: 1;
+  }
+}
+
+@media screen and (min-width: 1256px) {
+  main > section:first-child,
+  main > section:last-child {
+    background-color: yellow;
+  }
+}
