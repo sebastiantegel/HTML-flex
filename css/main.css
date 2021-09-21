@@ -75,6 +75,6 @@ footer {
 @media screen and (min-width: 1256px) {
   main > section:first-child,
   main > section:last-child {
-    background-color: yellow;
+    background-color: salmon;
   }
 }
