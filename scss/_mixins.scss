@@ -1,0 +1,36 @@
+@use 'variables';
+
+@mixin box($size: 200px) {
+    border: variables.$border-main;
+    border-radius: 5px;
+    width: $size * 0.5;
+    height: $size * 2;
+}
+
+@mixin rotate($degrees) {
+    -ms-transform: rotate($degrees);
+    -webkit-transform: rotate($degrees);
+    -o-transform: rotate($degrees);
+    transform: rotate($degrees);
+}
+
+@mixin tablets-only() {
+    @media screen and (min-width: 512px) {
+        @content;
+    }
+}
+
+@mixin desktops-only() {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+%message-shared {
+    border: 1px solid grey;
+    border-radius: 5px;
+    color: #eee;
+    background-color: lightblue;
+    padding: 10px;
+    margin: 10px;
+}

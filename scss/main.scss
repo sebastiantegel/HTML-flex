@@ -1,0 +1,47 @@
+@use 'variables';
+@use 'mixins';
+
+#wrapper {
+    width: 1200px;
+    border: variables.$border-main;
+    margin: 0 auto;
+
+    .box {
+        @include mixins.box;
+        @include mixins.rotate(45deg);
+
+        .content {
+            padding: 10px;
+        }
+    }
+
+    .box-large {
+        @include mixins.box(500px);
+
+        .content {
+            padding: 10px;
+        }
+
+        @include mixins.tablets-only {
+            background-color: red;
+        }
+
+        @include mixins.desktops-only {
+            background-color: green;
+        }
+    }
+
+    .info {
+        @extend %message-shared;
+    }
+
+    .success {
+        @extend %message-shared;
+        background-color: lightgreen;
+    }
+
+    .error {
+        @extend %message-shared;
+        background-color: red;
+    }
+}
