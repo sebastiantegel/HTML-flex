@@ -44,4 +44,74 @@
         @extend %message-shared;
         background-color: red;
     }
+
+    .heart-container {
+        padding: 100px;
+        display: flex;
+        justify-content: center;
+
+        @keyframes rotate {
+            from {
+                transform: rotate(45deg);
+            }
+
+            to {
+                transform: rotate(-315deg);
+            }
+        }
+
+        @keyframes beat {
+            0% {
+                transform: rotate(45deg) scale(0.8);
+            }
+
+            5% {
+                transform: rotate(45deg) scale(0.9);
+            }
+
+            10% {
+                transform: rotate(45deg) scale(0.8);
+            }
+
+            15% {
+                transform: rotate(45deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(45deg) scale(0.8);
+            }
+
+            100% {
+                transform: rotate(45deg) scale(0.8);
+            }
+        }
+
+        .heart {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            transform: rotate(45deg);
+
+            animation: beat 2s linear infinite;
+
+            &:before,
+            &:after {
+                content: "";
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position: absolute;
+                border-radius: 50%;
+            }
+
+            &:after {
+                transform: translateY(-50px);
+            }
+
+            &:before {
+                transform: translateX(-50px);
+            }
+        }
+    }
 }
